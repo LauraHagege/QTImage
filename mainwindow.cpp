@@ -52,8 +52,8 @@ MainWindow::MainWindow(QWidget *parent) :
             if (pixelData != NULL)
             {
                 // do something useful with the pixel data
-                //QImage img(pixelData,image->getWidth(), image->getHeight(), QImage::Format_Indexed8 );
-                QColor color;
+                QImage img(pixelData,image->getWidth(), image->getHeight(), QImage::Format_Indexed8 );
+                /*QColor color;
                 QImage *img;
                 void *pDicomDibits;
                 uchar *px;
@@ -81,18 +81,19 @@ MainWindow::MainWindow(QWidget *parent) :
                             px[x] = (unsigned char) (*pd);
                             pd++;
                         }
-                    }
+                    }*/
+
 
                     QGraphicsScene * graphic = new QGraphicsScene( this );
 
-                    graphic->addPixmap( QPixmap::fromImage( *img ) );
+                    graphic->addPixmap( QPixmap::fromImage( img ) );
 
                     ui->graphicsView->setScene(graphic);
 
-                }else
-                    cout << "Non monochrome image" << endl;
+               /* }else
+                    cout << "Non monochrome image" << endl;*/
 
-                img->save("C:\\Users\\simms\\Desktop\\Laura\\test.bmp");
+
             }
           } else
             cerr << "Error: cannot load DICOM image (" << DicomImage::getString(image->getStatus()) << ")" << endl;

@@ -30,6 +30,7 @@ int main(int argc, char *argv[])
           {
             cout << "size" << image->getOutputDataSize() << endl;
             image->setMinMaxWindow();
+            
             Uint8 *pixelData = (Uint8 *)(image->getOutputData(8 )); // bits per sample
             // Uint8 is a pointer to internal memory buffer
             if (pixelData != NULL)

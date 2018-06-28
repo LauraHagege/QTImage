@@ -15,6 +15,7 @@ MainWindow::MainWindow(QImage image, int sizeX, int sizeY,QWidget *parent) :
     //initialize random seed
     srand (time(NULL));
 
+
     //QImage image = QImage( sizeX, sizeY, QImage::Format_RGB32 );
 
     /*for( int l=0; l<sizeX; l++ )

@@ -24,18 +24,21 @@ int main(int argc, char *argv[])
    // int sizeY = 600;
    // QImage image = QImage( sizeX, sizeY, QImage::Format_RGB32 );
 
-    if (image != NULL)
+    /*if (image != NULL)
         {
           if (image->getStatus() == EIS_Normal)
           {
             cout << "size" << image->getOutputDataSize() << endl;
             image->setMinMaxWindow();
+
             Uint8 *pixelData = (Uint8 *)(image->getOutputData(8 )); // bits per sample
             // Uint8 is a pointer to internal memory buffer
             if (pixelData != NULL)
             {
 
-                QImage img(pixelData,image->getWidth(), image->getHeight(), QImage::Format_Grayscale8);
+               // QImage img(pixelData,image->getWidth(), image->getHeight(), QImage::Format_Grayscale8);
+
+
                 MainWindow w(img, image->getWidth(),image->getHeight());
                 w.show();
             }
@@ -44,8 +47,10 @@ int main(int argc, char *argv[])
         }
         //delete image;
 
+*/
 
-
+    MainWindow w;
+    w.show();
 
     return a.exec();
 }
